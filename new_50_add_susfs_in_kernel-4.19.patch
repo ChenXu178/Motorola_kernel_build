@@ -1246,19 +1246,16 @@ index adcc8f01c..f605a2018 100644
  } __randomize_layout;
  
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 47d35cbf2..6fdc87157 100644
+index 47d35cbf2..2d8d8d7dc 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
-@@ -1480,11 +1480,25 @@ struct task_struct {
+@@ -1480,11 +1480,22 @@ struct task_struct {
  #endif
  	/* task is frozen/stopped (used by the cgroup freezer) */
  	ANDROID_KABI_USE(1, unsigned frozen:1);
 -
 +#if defined(CONFIG_KSU_SUSFS)
 +	ANDROID_KABI_USE(6, u64 susfs_task_state);
-+#endif
-+#if defined(CONFIG_KSU_SUSFS)
-+	u64 susfs_task_state;
 +#endif
 +#ifdef CONFIG_KSU_SUSFS
 +	ANDROID_KABI_USE(8, u64 susfs_last_fake_mnt_id);
