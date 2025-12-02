@@ -50,7 +50,6 @@ jobs:
           cp susfs4ksu/kernel_patches/fs/* kernel-source/fs/
           cp susfs4ksu/kernel_patches/include/linux/* kernel-source/include/linux/
           cd kernel-source/KernelSU-Next/
-          cd kernel-source/KernelSU-Next/
           patch -p1 < new_10_enable_susfs_for_ksu.patch
           cd ..
           patch -p1 < new_50_add_susfs_in_kernel-4.19.patch
