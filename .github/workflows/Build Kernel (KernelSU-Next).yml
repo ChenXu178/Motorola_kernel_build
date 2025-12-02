@@ -70,6 +70,7 @@ jobs:
           echo "CONFIG_KSU_SUSFS_HIDE_KSU_SUSFS_SYMBOLS=y" >> arch/arm64/configs/nio_defconfig
           echo "CONFIG_KSU_SUSFS_SPOOF_CMDLINE_OR_BOOTCONFIG=y" >> arch/arm64/configs/nio_defconfig
           echo "CONFIG_KSU_SUSFS_OPEN_REDIRECT=y" >> arch/arm64/configs/nio_defconfig
+          echo "CONFIG_KSU_SUSFS_SUS_MAPS=y" >> arch/arm64/configs/nio_defconfig
           cd ..
 
       - name: Build kernel
